@@ -1,4 +1,3 @@
-// Basic Types
 let taskCount: number = 0;
 let isCompleted: boolean = false;
 let taskTitle: string = "My Tasks";
@@ -6,44 +5,44 @@ let nullTask: null = null;
 let undefinedTask: undefined = undefined;
 let anyData: any = "Flexible";
 
-// Array and Tuple
+
 let taskArray: string[] = [];
 let taskTuple: [string, number] = ["First task", 1];
 
-// Enum
+
 enum TaskStatus {
   Pending = "PENDING",
   Done = "DONE",
 }
 
-// Literal and Union Types
+
 type TaskPriority = "low" | "medium" | "high";
 type TaskType = string | null;
 
-// Interface
+
 interface ITodo {
   id: number;
   title: string;
   status: TaskStatus;
   priority: TaskPriority;
-  description?: string; // Optional property
+  description?: string; 
 }
 
-// Type Alias
+
 type TodoAction = "add" | "delete";
 
-// Intersection Type
+
 type AdvancedTodo = ITodo & { deadline?: Date };
 
-// Conditional Type
+
 type Result<T> = T extends string ? string : number;
 
-// Type Guard
+
 function isString(value: unknown): value is string {
   return typeof value === "string";
 }
 
-// Class using typecasting
+
 class TodoList {
   private tasks: ITodo[] = [];
 
@@ -98,18 +97,18 @@ class TodoList {
   }
 }
 
-// Generics and Mapped Types
+
 function wrapInArray<T>(item: T): T[] {
   return [item];
 }
 
-type OptionalTodo = Partial<ITodo>;         // Mapped Type
-type ReadOnlyTodo = Readonly<ITodo>;        // Mapped Type
+type OptionalTodo = Partial<ITodo>;         
+type ReadOnlyTodo = Readonly<ITodo>;       
 
-// Never type demo
+
 function throwError(msg: string): never {
   throw new Error(msg);
 }
 
-// Using the class
+
 const todoApp = new TodoList();
