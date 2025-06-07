@@ -1,25 +1,20 @@
 "use strict";
-// Basic Types
 let taskCount = 0;
 let isCompleted = false;
 let taskTitle = "My Tasks";
 let nullTask = null;
 let undefinedTask = undefined;
 let anyData = "Flexible";
-// Array and Tuple
 let taskArray = [];
 let taskTuple = ["First task", 1];
-// Enum
 var TaskStatus;
 (function (TaskStatus) {
     TaskStatus["Pending"] = "PENDING";
     TaskStatus["Done"] = "DONE";
 })(TaskStatus || (TaskStatus = {}));
-// Type Guard
 function isString(value) {
     return typeof value === "string";
 }
-// Class using typecasting
 class TodoList {
     constructor() {
         this.tasks = [];
@@ -63,13 +58,10 @@ class TodoList {
         });
     }
 }
-// Generics and Mapped Types
 function wrapInArray(item) {
     return [item];
 }
-// Never type demo
 function throwError(msg) {
     throw new Error(msg);
 }
-// Using the class
 const todoApp = new TodoList();
